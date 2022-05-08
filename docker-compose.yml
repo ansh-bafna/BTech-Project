@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: ./services/server
+    container_name: server
+    volumes:
+      - ./services/server/:/app
+      - server_images:/app/images
+      - server_image_previews:/app/image_previews
+      - server_img_dataset:/app/img_dataset
+      - server_test_dataset:/app/test_dataset
+      - server_models:/app/models
+      - server_pickles:/app/pickles
+      - server_model_output:/app/model_output
+      - server_train_val_csv:/app/train_val_csv
+    ports:
+      - "5000:80"
+
+  web:
+    build:
+      context: ./services/web
+    container_name: web
+    depends_on:
+      - server
+    volumes:
+      - ./services/web/:/usr/app
+      - node_modules_web:/usr/app/node_modules
+    ports:
+      - "3000:80"
+
+volumes:
+  node_modules_web:
+  server_images:
+  server_img_dataset:
+  server_test_dataset:
+  server_image_previews:
+  server_train_val_csv:
+  server_models:
+  server_model_output:
+  server_pickles:
