@@ -1,5 +1,4 @@
-
-##Official Code Repository of B.Tech. Project 
+# Official Code Repository of B.Tech. Project 
 
 This is the repository for Traffic Sign Recognition
 
