@@ -34,6 +34,6 @@ This is the repository for Traffic Sign Recognition
 ## File Structure
 
 - **Detailed project report** has been attached as `PROJECT_REPORT.pdf`.
-- ML Training workflow has been attached in `training.ipynb`
+- ML Training workflow has been attached in `Resnet_training.ipynb` and `Efficient net_training.ipynb`   
 - Backend code has been attached in `services/server/`.
 - Frontend code has been attached in `services/web/`.
